@@ -14,8 +14,11 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Responses starter app",
-  description: "Starter app for the OpenAI Responses API",
+  title: "Felix",
+  description: "CRISPY Felix — conversational AI with connected tools and GitHub editing.",
+  applicationName: "Felix",
+  manifest: "/manifest.webmanifest",
+  themeColor: "#0b0f14",
   icons: {
     icon: "/openai_logo.svg",
   },
@@ -31,7 +34,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex h-screen bg-gray-200 w-full flex-col  text-stone-900">
+        <div className="flex h-screen bg-gray-200 w-full flex-col text-stone-900">
           <main>{children}</main>
         </div>
       </body>
