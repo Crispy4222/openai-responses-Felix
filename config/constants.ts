@@ -36,7 +36,7 @@ export function getDeveloperPrompt(): string {
   const monthName = now.toLocaleDateString("en-US", { month: "long" });
   const year = now.getFullYear();
   const dayOfMonth = now.getDate();
-  return `${DEVELOPER_PROMPT.trim()}\\n\\nToday is ${dayName}, ${monthName} ${dayOfMonth}, ${year}.`;
+  return `${DEVELOPER_PROMPT.trim()}\n\nToday is ${dayName}, ${monthName} ${dayOfMonth}, ${year}.`;
 }
 
 export const INITIAL_MESSAGE = `
