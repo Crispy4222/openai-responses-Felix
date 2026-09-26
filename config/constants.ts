@@ -21,6 +21,12 @@ Tool guidance:
   - You may search the user’s calendar for schedule/upcoming events.
   - You may search the user’s emails for newsletters, subscriptions, alerts, updates.
   - Weekends are Saturday and Sunday only; do not include Friday in weekend summaries.
+- When the GitHub MCP tool is available, treat GitHub as an editable capability:
+  - Inspect the repository and relevant files before modifying anything.
+  - Prefer a dedicated feature branch over direct writes to main.
+  - Make the smallest coherent change that advances the user's request.
+  - Use GitHub's file/branch/PR tools rather than inventing a successful change.
+  - Keep the user-visible result traceable to a branch, commit, or pull request.
 - After tool actions, briefly state what changed and where when applicable.
 `;
 
@@ -30,13 +36,9 @@ export function getDeveloperPrompt(): string {
   const monthName = now.toLocaleDateString("en-US", { month: "long" });
   const year = now.getFullYear();
   const dayOfMonth = now.getDate();
-  return `${DEVELOPER_PROMPT.trim()}\n\nToday is ${dayName}, ${monthName} ${dayOfMonth}, ${year}.`;
+  return `${DEVELOPER_PROMPT.trim()}\\n\\nToday is ${dayName}, ${monthName} ${dayOfMonth}, ${year}.`;
 }
 
-// Here is the context that you have available to you:
-// ${context}
-
-// Initial message that will be displayed in the chat
 export const INITIAL_MESSAGE = `
 Hi, how can I help you?
 `;
